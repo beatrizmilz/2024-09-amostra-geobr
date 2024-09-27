@@ -1,0 +1,447 @@
+---
+title: "Conhecendo o pacote `geobr`"
+author: "Beatriz Milz"
+subtitle: "aMostra de Estatística 2024 - IME/USP"
+date: "2024-09-30"
+date-format: "DD/MM/YYYY"
+format: 
+  revealjs:
+    footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
+#   logo: images/logo-laplan.png
+    theme: styles.scss
+    slide-number: c/t
+    show-slide-number: all
+code-link: true
+incremental: false
+knitr:
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+    error: false
+    cache: true
+    fig-align: center
+---
+
+# Beatriz Milz
+
+## Acadêmica
+
+-   Doutora em Ciência Ambiental no IEE/USP
+- Atualmente: 
+  - Estágio pós-doutoral na UFABC
+  
+<center>
+![](images/Logo_UFABC.jpg){fig-align="center" width="20%"} [![](images/logo-laplan.png){fig-align="center" width="50%"}](https://laplan.pesquisa.ufabc.edu.br/)
+</center>
+
+
+
+## Comunidades
+
+-   Co-organizadora da [R-Ladies São Paulo](https://rladies-sp.org)
+- *Software peer review editor* na [rOpenSci](https://ropensci.org/)
+- [GitHub Star](https://stars.github.com/profiles/beatrizmilz/)
+
+
+<center>
+[![](images/logo-rladies.png){fig-align="center" width="25%"}](https://rladies-sp.org/)
+[![](images/ropensci.png){fig-align="center" width="25%"}](https://ropensci.org/)
+[![](images/github-stars-logo_Color.webp){fig-align="center" width="30%"}](https://stars.github.com/profiles/beatrizmilz/)
+</center>
+
+## Organização da tradução: R4DS 2ed
+
+<center>
+[![](images/r4ds.png){fig-align="center" width="70%"}](https://cienciadedatos.github.io/pt-r4ds/)
+
+</center>
+
+
+##  Experiência com dados espaciais
+
+-   2014-2015: Núcleo técnico de Gestão Ambiental/Secretaria de Segurança Urbana/Prefeitura Municipal de São Paulo
+-   2016-2018: Mestrado no Programa de Pós Graduação em Análise Ambiental Integrada na UNIFESP, Campus Diadema.
+-   2019 em diante: aulas, projetos de consultoria, pesquisa de doutorado, etc.
+    
+<https://beamilz.com>
+
+# Plano para hoje!
+
+- O que é o pacote geobr
+
+- Conceitos importantes
+
+- Principais funções do pacote `geobr`
+
+- Exemplo Prático!
+
+- Links úteis para aprender mais
+
+## Principais pacotes que usaremos
+
+<center>
+[![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/dplyr.png){fig-align="center" width="15%"}](https://dplyr.tidyverse.org/)
+[![](images/logos/ggplot2.png){fig-align="center" width="15%"}](https://ggplot2.tidyverse.org/)
+[![](images/logos/sf.gif){fig-align="center" width="17%"}](https://r-spatial.github.io/sf/)
+
+
+
+</center>
+
+## Pacote geobr
+
+-   O pacote **geobr** disponibiliza funções para obter diversas bases de dados **espaciais** oficiais do Brasil.
+
+-   O pacote foi desenvolvido e é mantido pela equipe do [Instituto de Pesquisa Econômica Aplicada (IPEA)](https://www.ipea.gov.br/portal/).
+
+-   Você pode saber mais no [repositório do pacote no GitHub](https://ipeagit.github.io/geobr/).
+
+- Disponível para `R` e `Python`.
+
+<center>
+![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}![](images/logos/geobr-preto.png){fig-align="center" width="15%"}
+</center>
+
+## Pacotes de dados brasileiros desenvolvidos pelo IPEA
+
+
+<center>
+[![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/geobr-preto.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/flightsbr.png){fig-align="center" width="15%"}](https://ipeagit.github.io/flightsbr)
+[![](images/logos/censobr.png){fig-align="center" width="15%"}](https://ipeagit.github.io/censobr/)
+</center>
+
+
+# Conceitos importantes
+
+## Dados Vetoriais e Dados Matriciais/Raster
+
+![](images/vector-raster_1644589693.jpeg){fig-align="center"}
+
+::: footer
+Fonte da imagem: <https://guides.lib.uw.edu/>
+:::
+
+## Dados vetoriais
+
+-   Representação do mundo por pontos, linhas e polígonos.
+
+![](images/exemplo-vetores.png){fig-align="center"}
+
+::: footer
+Fonte: [Geocomputation with R](https://r.geocompx.org/spatial-class)
+:::
+
+
+## Com o geobr, trabalhamos com dados vetoriais!
+
+-   **Pontos**: localização de uma escola, ponto de coleta, etc.
+
+-   **Linhas**: ruas/estradas/rodovias, rios, etc.
+
+-   **Polígonos**: delimitação de cidades, estados, países, etc.
+
+
+
+
+
+## Pacote sf
+
+
+- O [sf (Simple Features for R)](https://r-spatial.github.io/sf/) é um pacote para manipulação de dados espaciais vetoriais.
+
+[![](images/sf_horst.png){fig-align="center" width="60%"}](https://github.com/allisonhorst/stats-illustrations)
+
+::: footer
+Fonte da imagem: <https://github.com/allisonhorst/stats-illustrations>
+:::
+
+------------------------------------------------------------------------
+
+![](images/sf_page-0001.jpg){fig-align="center" width="90%"}
+
+::: footer
+Fonte: <https://github.com/rstudio/cheatsheets/blob/main/sf.pdf>
+:::
+
+------------------------------------------------------------------------
+
+![](images/sf_page-0002.jpg){fig-align="center" width="90%"}
+
+::: footer
+Fonte: <https://github.com/rstudio/cheatsheets/blob/main/sf.pdf>
+:::
+
+# `geobr`
+
+## Funções importantes
+
+-   `read_country()`: Delimitação do Brasil
+
+-   `read_state()`: Delimitação dos estados do Brasil
+
+-   `read_state("SP")`: Delimitação de um estado específico, usando a sigla como argumento
+
+-   `read_municipality()`: Delimitação de todos os municípios do Brasil. É uma base pesada!
+
+-   `read_municipality(code_muni = 3550308)`: Delimitação de um município específico, usando o código do IBGE do município.
+
+## Consultando todas as funções disponíveis
+
+-   Função `list_geobr()`
+
+```{r}
+#| echo: false
+geobr::list_geobr() |> 
+  dplyr::select(1, 2, 4) |> 
+  reactable::reactable(pagination = TRUE, 
+                       defaultPageSize = 5, class = "smaller")
+```
+
+
+# Exemplos práticos
+
+# Exemplo 1: 
+Localização das escolas que oferecem Ensino Médio no município de São Paulo
+
+## Ler a delimitação dos estados brasileiros
+
+```{r}
+# Carregando pacotes necessários
+library(geobr)
+library(sf)
+library(tidyverse)
+```
+
+```{r}
+# Lendo os dados da delimitação dos estados brasileiros
+brasil_ufs <- read_state(showProgress = FALSE)
+```
+
+```{r}
+# Classe do objeto
+class(brasil_ufs)
+```
+
+## Explorando o objeto
+
+```{r}
+glimpse(brasil_ufs)
+```
+
+## Visualizando os estados brasileiros
+
+```{r}
+brasil_ufs |> 
+  ggplot() +
+  geom_sf()
+```
+
+## Filtrando o estado de São Paulo
+
+```{r}
+estado_sp <- brasil_ufs |> 
+  filter(abbrev_state == "SP") 
+
+estado_sp |>
+  ggplot() +
+  geom_sf()
+```
+
+## E os municípios?
+
+```{r}
+# Carregando municípios
+brasil_municipios <- read_municipality(showProgress = FALSE)
+```
+
+## Explorando o objeto
+
+```{r}
+glimpse(brasil_municipios)
+```
+
+## Como saber o código IBGE de um município?
+
+-   Você pode consultar o código IBGE de um município no site do [IBGE](https://www.ibge.gov.br/explica/codigos-dos-municipios.php).
+
+[![](images/codigo-muni.png){fig-align="center" width="80%"}](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)
+
+## Filtrando o município de São Paulo
+
+```{r}
+muni_sp <- brasil_municipios |> 
+  filter(code_muni == 3550308) 
+```
+
+## Visualizando o município de São Paulo
+
+```{r}
+muni_sp |> 
+  ggplot() +
+  geom_sf()
+```
+
+## E escolas?
+
+```{r}
+escolas_brasil <- read_schools(showProgress = FALSE)
+```
+
+## Explorando o objeto
+
+```{r}
+glimpse(escolas_brasil)
+```
+
+## Escolas no município de São Paulo
+
+```{r}
+escolas_saopaulo <- escolas_brasil |> 
+  filter(abbrev_state == "SP",
+         name_muni == "São Paulo") 
+```
+
+## Escolas por `government_level`
+
+```{r}
+escolas_saopaulo |> 
+  count(government_level, sort = TRUE)
+```
+
+## Escolas que oferecem Ensino Médio
+
+```{r}
+ensino_medio_sao_paulo <- escolas_saopaulo |>
+  filter(str_detect(education_level, "Ensino Médio")) |>
+  group_by(government_level) |> 
+  mutate(
+    numero_linhas = n(),
+    nome_label = paste0(government_level, " (N=", numero_linhas, ")")
+  ) |> 
+ungroup()
+```
+
+# Vamos visualizar?
+
+## Visualizando as escolas
+
+```{r}
+escolas_saopaulo |> 
+  ggplot() +
+  geom_sf()
+```
+
+## Visualizando as escolas e o município
+
+```{r}
+#| code-line-numbers: "3"
+escolas_saopaulo |> 
+  ggplot() +
+  geom_sf(data = muni_sp) +
+  geom_sf()
+```
+
+## Visualizando as escolas por `government_level`
+
+```{r}
+#| code-line-numbers: "4"
+escolas_saopaulo |> 
+  ggplot() +
+  geom_sf(data = muni_sp) +
+  geom_sf(aes(color = government_level))
+```
+
+## Visualizando as escolas por `government_level`
+
+```{r}
+#| code-line-numbers: "5|4"
+escolas_saopaulo |> 
+  ggplot() +
+  geom_sf(data = muni_sp) +
+  geom_sf(aes(color = government_level), show.legend = FALSE) +
+  facet_wrap(~government_level, nrow = 1)
+```
+
+## Visualizando as escolas que oferecem Ensino Médio
+
+```{r}
+#| code-line-numbers: "5"
+ensino_medio_sao_paulo |>
+  ggplot() +
+  geom_sf(data = muni_sp) +
+  geom_sf(aes(color = government_level, 
+              alpha = 0.1), 
+          show.legend = FALSE) +
+  facet_wrap(~ government_level, nrow = 1)
+```
+
+## 
+
+Localização das escolas estaduais e escolas privadas no município de São Paulo, que oferecem Ensino Médio
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: 'Ver código'
+library(ggspatial)
+ensino_medio_sao_paulo |>
+  filter(government_level %in% c("Estadual", "Privada")) |>
+  ggplot() +
+  geom_sf(data = muni_sp) +
+  geom_sf(aes(color = government_level, alpha = 0.1), show.legend = FALSE) +
+  facet_wrap(~ nome_label) +
+  labs(x = "Longitude",
+       y = "Latitude") +
+  scale_fill_viridis_d(begin = 0.2, end = 0.9) +
+  theme(legend.spacing.x = unit(1.0, 'cm')) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_line(
+      color = gray(0.9),
+      linetype = "dashed",
+      size = 0.1
+    ),
+    panel.background = element_rect(fill = "white")
+  ) +
+  theme(
+    axis.text.y = element_text(
+      angle = 90,
+      hjust = 0.5,
+      size = 8
+    ),
+    axis.text.x = element_text(size = 8),
+    axis.title.y = element_text(size = rel(0.8)),
+    axis.title.x = element_text(size = rel(0.8)),
+    legend.title = element_text(size = rel(0.8))
+  )
+```
+
+## Exemplo 2: 
+
+Em breve!
+
+
+# Materiais para estudar mais
+
+## Exemplos com geobr 
+
+- [Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+
+
+- [{censobr}: Explorando o Censo Demográfico em R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+
+## Referências sobre dados espaciais
+
+-   [Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no R](https://analises-ecologicas.netlify.app/cap15.html)
+
+-   [Livro Geocomputation with R](https://geocompr.robinlovelace.net/intro.html)
+
+-   [A Gentle Introduction to GIS - QGIS Documentation](https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/)
+
+-   [Geocomputation with R - Foundations - Geographic data in R](https://r.geocompx.org/spatial-class)
+
+-   [Introdução à acessibilidade urbana - um guia prático em R](https://ipeagit.github.io/intro_access_book/pt/)
