@@ -11,7 +11,8 @@ format:
     theme: styles.scss
     slide-number: c/t
     show-slide-number: all
-code-link: true
+    code-link: true
+    code-copy: true
 incremental: false
 knitr:
   opts_chunk:
@@ -235,6 +236,7 @@ glimpse(brasil_ufs)
 ## Visualizando os estados brasileiros
 
 ```{r}
+#| label: mapa-br
 brasil_ufs |> 
   ggplot() +
   geom_sf()
@@ -243,6 +245,7 @@ brasil_ufs |>
 ## Filtrando o estado de São Paulo
 
 ```{r}
+#| label: mapa-sp
 estado_sp <- brasil_ufs |> 
   filter(abbrev_state == "SP") 
 
@@ -280,6 +283,7 @@ muni_sp <- brasil_municipios |>
 ## Visualizando o município de São Paulo
 
 ```{r}
+#| label: mapa-muni-sp
 muni_sp |> 
   ggplot() +
   geom_sf()
@@ -330,6 +334,7 @@ ungroup()
 ## Visualizando as escolas
 
 ```{r}
+#| label: mapa-sp-escolas
 escolas_saopaulo |> 
   ggplot() +
   geom_sf()
@@ -338,7 +343,7 @@ escolas_saopaulo |>
 ## Visualizando as escolas e o município
 
 ```{r}
-#| code-line-numbers: "3"
+#| label: mapa-muni-sp-escolas
 escolas_saopaulo |> 
   ggplot() +
   geom_sf(data = muni_sp) +
@@ -348,7 +353,7 @@ escolas_saopaulo |>
 ## Visualizando as escolas por `government_level`
 
 ```{r}
-#| code-line-numbers: "4"
+#| label: mapa-muni-sp-escolas-level
 escolas_saopaulo |> 
   ggplot() +
   geom_sf(data = muni_sp) +
@@ -358,7 +363,7 @@ escolas_saopaulo |>
 ## Visualizando as escolas por `government_level`
 
 ```{r}
-#| code-line-numbers: "5|4"
+#| label: mapa-muni-sp-escolas-facet
 escolas_saopaulo |> 
   ggplot() +
   geom_sf(data = muni_sp) +
@@ -369,7 +374,7 @@ escolas_saopaulo |>
 ## Visualizando as escolas que oferecem Ensino Médio
 
 ```{r}
-#| code-line-numbers: "5"
+#| label: mapa-muni-sp-escolas-facet-EM
 ensino_medio_sao_paulo |>
   ggplot() +
   geom_sf(data = muni_sp) +
@@ -387,6 +392,7 @@ Localização das escolas estaduais e escolas privadas no município de São Pau
 #| echo: true
 #| code-fold: true
 #| code-summary: 'Ver código'
+#| label: mapa-muni-sp-escolas-final
 library(ggspatial)
 ensino_medio_sao_paulo |>
   filter(government_level %in% c("Estadual", "Privada")) |>
@@ -420,19 +426,91 @@ ensino_medio_sao_paulo |>
   )
 ```
 
-## Exemplo 2: 
+# Exemplo 2: 
+Criando um mapa utilizando dados que não estão no `{geobr}` 
 
-Em breve!
+## `abjData::pnud_min`
+
+```{r}
+library(abjData)
+glimpse(pnud_min)
+```
+
+
+## Dados para o estado de São Paulo
+
+```{r}
+pnud_sp <- filter(pnud_min, uf_sigla == "SP")
+```
+
+Como elaborar um mapa com esses dados?
+
+## Join 
+
+- Podemos unir duas bases utilizando uma coluna em comum
+
+![](images/left-join.gif){fig-align="center" width="50%"}
+
+::: footer
+Fonte da imagem: <https://www.garrickadenbuie.com/project/tidyexplain/>
+:::
+
+
+## Dados vetoriais
+
+Importar os polígonos com a delimitação dos municípios do estado de São Paulo:
+
+```{r}
+municipios_sp <- read_municipality("SP", showProgress = FALSE)
+```
+## Unir as duas bases de dados
+
+```{r}
+#| error: true
+left_join(municipios_sp, pnud_sp, by = c("code_muni" =  "muni_id"))
+```
+
+## Unir as duas bases de dados
+
+```{r}
+pnud_sp_geo <- municipios_sp |> 
+  mutate(code_muni = as.character(code_muni)) |> 
+  left_join(pnud_sp, by = c("code_muni" =  "muni_id"))
+```
+
+```{r}
+glimpse(pnud_sp_geo)
+```
+
+## Visualizando com o ggplot2
+
+```{r}
+#| label: mapa-pnud-geo
+pnud_sp_geo |> 
+  ggplot() +
+  geom_sf(aes(fill = espvida)) +
+  facet_wrap(vars(ano)) +
+  theme_void() +
+  scale_fill_viridis_c() +
+  labs(fill = "Esperança de vida") +
+  theme(legend.position = "bottom")
+```
 
 
 # Materiais para estudar mais
 
-## Exemplos com geobr 
-
-- [Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+## Exemplos similares 
 
 
-- [{censobr}: Explorando o Censo Demográfico em R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+- [Workshop: {censobr} - Explorando o Censo Demográfico em R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+
+- [Documentação: Pacote abjData](https://abjur.github.io/abjData/)
+
+- [Video: Join - Juntando bases de dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
+
+
+- [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+
 
 ## Referências sobre dados espaciais
 

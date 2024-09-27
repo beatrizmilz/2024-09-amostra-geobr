@@ -526,8 +526,8 @@ Beatriz Milz
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="reactable html-widget html-fill-item" id="htmlwidget-7845a64414a14f0ecb78" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7845a64414a14f0ecb78">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"function":["`read_country`","`read_region`","`read_state`","`read_meso_region`","`read_micro_region`","`read_intermediate_region`","`read_immediate_region`","`read_municipality`","`read_municipal_seat`","`read_weighting_area`","`read_census_tract`","`read_statistical_grid`","`read_metro_area`","`read_urban_area`","`read_amazon`","`read_biomes`","`read_conservation_units`","`read_disaster_risk_area`","`read_indigenous_land`","`read_semiarid`","`read_health_facilities`","`read_health_region`","`read_neighborhood`","`read_schools`","`read_comparable_areas`","`read_urban_concentrations`","`read_pop_arrangements`"],"geography":["Country","Region","States","Meso region","Micro region","Intermediate region","Immediate region","Municipality","Municipality seats (sedes municipais)","Census weighting area (área de ponderação)","Census tract (setor censitário)","Statistical Grid of 200 x 200 meters","Metropolitan areas","Urban footprints","Brazil's Legal Amazon","Biomes","Environmental Conservation Units","Disaster risk areas","Indigenous lands","Semi Arid region","Health facilities","Health regions and macro regions","Neighborhood limits","Schools","Historically comparable municipalities, aka Áreas mínimas comparáveis (AMCs)","Urban concentration areas (concentrações urbanas)","Population arrangements (arranjos populacionais)"],"source":["IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","MMA","IBGE","MMA","CEMADEN and IBGE","FUNAI","IBGE","CNES, DataSUS","DataSUS","IBGE","INEP","IBGE","IBGE","IBGE"]},"columns":[{"id":"function","name":"function","type":"character"},{"id":"geography","name":"geography","type":"character"},{"id":"source","name":"source","type":"character"}],"defaultPageSize":5,"className":"smaller","dataKey":"63b58768d651a969f70f1cc5aad641a8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-e61d152a9251160dd02d" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e61d152a9251160dd02d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"function":["`read_country`","`read_region`","`read_state`","`read_meso_region`","`read_micro_region`","`read_intermediate_region`","`read_immediate_region`","`read_municipality`","`read_municipal_seat`","`read_weighting_area`","`read_census_tract`","`read_statistical_grid`","`read_metro_area`","`read_urban_area`","`read_amazon`","`read_biomes`","`read_conservation_units`","`read_disaster_risk_area`","`read_indigenous_land`","`read_semiarid`","`read_health_facilities`","`read_health_region`","`read_neighborhood`","`read_schools`","`read_comparable_areas`","`read_urban_concentrations`","`read_pop_arrangements`"],"geography":["Country","Region","States","Meso region","Micro region","Intermediate region","Immediate region","Municipality","Municipality seats (sedes municipais)","Census weighting area (área de ponderação)","Census tract (setor censitário)","Statistical Grid of 200 x 200 meters","Metropolitan areas","Urban footprints","Brazil's Legal Amazon","Biomes","Environmental Conservation Units","Disaster risk areas","Indigenous lands","Semi Arid region","Health facilities","Health regions and macro regions","Neighborhood limits","Schools","Historically comparable municipalities, aka Áreas mínimas comparáveis (AMCs)","Urban concentration areas (concentrações urbanas)","Population arrangements (arranjos populacionais)"],"source":["IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","MMA","IBGE","MMA","CEMADEN and IBGE","FUNAI","IBGE","CNES, DataSUS","DataSUS","IBGE","INEP","IBGE","IBGE","IBGE"]},"columns":[{"id":"function","name":"function","type":"character"},{"id":"geography","name":"geography","type":"character"},{"id":"source","name":"source","type":"character"}],"defaultPageSize":5,"className":"smaller","dataKey":"63b58768d651a969f70f1cc5aad641a8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section></section><section id="exemplos-práticos" class="title-slide slide level1 center"><h1>Exemplos práticos</h1>
@@ -573,7 +573,7 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-63.32721 -..., MULTIPO
 <span id="cb7-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="filtrando-o-estado-de-são-paulo" class="slide level2"><h2>Filtrando o estado de São Paulo</h2>
+<img data-src="index_files/figure-revealjs/mapa-br-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="filtrando-o-estado-de-são-paulo" class="slide level2"><h2>Filtrando o estado de São Paulo</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>estado_sp <span class="ot">&lt;-</span> brasil_ufs <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href=""></a>  <span class="fu">filter</span>(abbrev_state <span class="sc">==</span> <span class="st">"SP"</span>) </span>
@@ -583,7 +583,7 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-63.32721 -..., MULTIPO
 <span id="cb8-6"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-os-municípios" class="slide level2"><h2>E os municípios?</h2>
+<img data-src="index_files/figure-revealjs/mapa-sp-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-os-municípios" class="slide level2"><h2>E os municípios?</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Carregando municípios</span></span>
 <span id="cb9-2"><a href=""></a>brasil_municipios <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -621,7 +621,7 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-62.2462 -1..., MULTIPO
 <span id="cb13-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-escolas" class="slide level2"><h2>E escolas?</h2>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-escolas" class="slide level2"><h2>E escolas?</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>escolas_brasil <span class="ot">&lt;-</span> <span class="fu">read_schools</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -696,36 +696,36 @@ Geodetic CRS:  SIRGAS 2000
 <span id="cb21-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-e-o-município" class="slide level2"><h2>Visualizando as escolas e o município</h2>
+<img data-src="index_files/figure-revealjs/mapa-sp-escolas-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-e-o-município" class="slide level2"><h2>Visualizando as escolas e o município</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
 <span id="cb22-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb22-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
 <span id="cb22-4"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
 </h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
 <span id="cb23-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb23-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
 <span id="cb23-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level-1" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-level-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level-1" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
 </h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="5|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
 <span id="cb24-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb24-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
 <span id="cb24-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb24-5"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-que-oferecem-ensino-médio" class="slide level2"><h2>Visualizando as escolas que oferecem Ensino Médio</h2>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-facet-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-que-oferecem-ensino-médio" class="slide level2"><h2>Visualizando as escolas que oferecem Ensino Médio</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb25-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
 <span id="cb25-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level, </span>
@@ -734,7 +734,7 @@ Geodetic CRS:  SIRGAS 2000
 <span id="cb25-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="section" class="slide level2"><h2></h2>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-facet-EM-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="section" class="slide level2"><h2></h2>
 <p>Localização das escolas estaduais e escolas privadas no município de São Paulo, que oferecem Ensino Médio</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold"><summary>Ver código</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">library</span>(ggspatial)</span>
@@ -770,14 +770,112 @@ Geodetic CRS:  SIRGAS 2000
 <span id="cb26-31"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="exemplo-2" class="slide level2"><h2>Exemplo 2:</h2>
-<p>Em breve!</p>
-</section></section><section><section id="materiais-para-estudar-mais" class="title-slide slide level1 center"><h1>Materiais para estudar mais</h1>
-
-</section><section id="exemplos-com-geobr" class="slide level2"><h2>Exemplos com geobr</h2>
+<img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-final-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section><section><section id="exemplo-2" class="title-slide slide level1 center"><h1>Exemplo 2:</h1>
+<p>Criando um mapa utilizando dados que não estão no <a href="https://ipeagit.github.io/geobr/">geobr</a></p>
+</section><section id="abjdatapnud_min" class="slide level2"><h2><code>abjData::pnud_min</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">library</span>(abjData)</span>
+<span id="cb27-2"><a href=""></a><span class="fu">glimpse</span>(pnud_min)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 16,686
+Columns: 15
+$ ano       &lt;chr&gt; "1991", "1991", "1991", "1991", "1991", "1991", "1991", "199…
+$ muni_id   &lt;chr&gt; "1100015", "1100023", "1100031", "1100049", "1100056", "1100…
+$ muni_nm   &lt;chr&gt; "ALTA FLORESTA D'OESTE", "ARIQUEMES", "CABIXI", "CACOAL", "C…
+$ uf_sigla  &lt;chr&gt; "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", …
+$ regiao_nm &lt;chr&gt; "Norte", "Norte", "Norte", "Norte", "Norte", "Norte", "Norte…
+$ idhm      &lt;dbl&gt; 0.329, 0.432, 0.309, 0.407, 0.386, 0.376, 0.203, 0.425, 0.38…
+$ idhm_e    &lt;dbl&gt; 0.112, 0.199, 0.108, 0.171, 0.167, 0.151, 0.039, 0.220, 0.15…
+$ idhm_l    &lt;dbl&gt; 0.617, 0.684, 0.636, 0.667, 0.629, 0.658, 0.572, 0.629, 0.65…
+$ idhm_r    &lt;dbl&gt; 0.516, 0.593, 0.430, 0.593, 0.547, 0.536, 0.373, 0.553, 0.56…
+$ espvida   &lt;dbl&gt; 62.01, 66.02, 63.16, 65.03, 62.73, 64.46, 59.32, 62.76, 64.1…
+$ rdpc      &lt;dbl&gt; 198.46, 319.47, 116.38, 320.24, 240.10, 224.82, 81.38, 250.0…
+$ gini      &lt;dbl&gt; 0.63, 0.57, 0.70, 0.66, 0.60, 0.62, 0.59, 0.65, 0.63, 0.60, …
+$ pop       &lt;int&gt; 22835, 55018, 5846, 66534, 19030, 25070, 10737, 6902, 22505,…
+$ lat       &lt;dbl&gt; -11.929, -9.913, -13.492, -11.438, -13.189, -13.117, -12.962…
+$ lon       &lt;dbl&gt; -61.996, -63.041, -60.545, -61.448, -60.812, -60.542, -60.88…</code></pre>
+</div>
+</div>
+</section><section id="dados-para-o-estado-de-são-paulo" class="slide level2"><h2>Dados para o estado de São Paulo</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>pnud_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(pnud_min, uf_sigla <span class="sc">==</span> <span class="st">"SP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Como elaborar um mapa com esses dados?</p>
+</section><section id="join" class="slide level2"><h2>Join</h2>
 <ul>
-<li><p><a href="https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/">Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo</a></p></li>
-<li><p><a href="https://ipeagit.github.io/censobr_oficina_abep_2024/">{censobr}: Explorando o Censo Demográfico em R</a></p></li>
+<li>Podemos unir duas bases utilizando uma coluna em comum</li>
+</ul>
+
+<img data-src="images/left-join.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"><div class="footer">
+<p>Fonte da imagem: <a href="https://www.garrickadenbuie.com/project/tidyexplain/" class="uri">https://www.garrickadenbuie.com/project/tidyexplain/</a></p>
+</div>
+</section><section id="dados-vetoriais-1" class="slide level2"><h2>Dados vetoriais</h2>
+<p>Importar os polígonos com a delimitação dos municípios do estado de São Paulo:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>municipios_sp <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="st">"SP"</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="unir-as-duas-bases-de-dados" class="slide level2"><h2>Unir as duas bases de dados</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">left_join</span>(municipios_sp, pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `sf_column %in% names(g)`:
+! Can't join `x$code_muni` with `y$muni_id` due to incompatible types.
+ℹ `x$code_muni` is a &lt;double&gt;.
+ℹ `y$muni_id` is a &lt;character&gt;.</code></pre>
+</div>
+</div>
+</section><section id="unir-as-duas-bases-de-dados-1" class="slide level2"><h2>Unir as duas bases de dados</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>pnud_sp_geo <span class="ot">&lt;-</span> municipios_sp <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">code_muni =</span> <span class="fu">as.character</span>(code_muni)) <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a href=""></a>  <span class="fu">left_join</span>(pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="fu">glimpse</span>(pnud_sp_geo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,935
+Columns: 19
+$ code_muni    &lt;chr&gt; "3500105", "3500105", "3500105", "3500204", "3500204", "3…
+$ name_muni    &lt;chr&gt; "Adamantina", "Adamantina", "Adamantina", "Adolfo", "Adol…
+$ code_state   &lt;chr&gt; "35", "35", "35", "35", "35", "35", "35", "35", "35", "35…
+$ abbrev_state &lt;chr&gt; "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP…
+$ ano          &lt;chr&gt; "1991", "2000", "2010", "1991", "2000", "2010", "1991", "…
+$ muni_nm      &lt;chr&gt; "ADAMANTINA", "ADAMANTINA", "ADAMANTINA", "ADOLFO", "ADOL…
+$ uf_sigla     &lt;chr&gt; "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP", "SP…
+$ regiao_nm    &lt;chr&gt; "Sudeste", "Sudeste", "Sudeste", "Sudeste", "Sudeste", "S…
+$ idhm         &lt;dbl&gt; 0.592, 0.721, 0.790, 0.513, 0.667, 0.730, 0.491, 0.642, 0…
+$ idhm_e       &lt;dbl&gt; 0.423, 0.644, 0.750, 0.296, 0.574, 0.648, 0.260, 0.473, 0…
+$ idhm_l       &lt;dbl&gt; 0.731, 0.811, 0.852, 0.751, 0.802, 0.844, 0.719, 0.801, 0…
+$ idhm_r       &lt;dbl&gt; 0.672, 0.718, 0.772, 0.608, 0.644, 0.710, 0.634, 0.697, 0…
+$ espvida      &lt;dbl&gt; 68.87, 73.64, 76.13, 70.04, 73.09, 75.62, 68.14, 73.04, 7…
+$ rdpc         &lt;dbl&gt; 525.09, 696.10, 975.43, 351.62, 439.57, 661.65, 412.97, 6…
+$ gini         &lt;dbl&gt; 0.57, 0.55, 0.51, 0.41, 0.38, 0.38, 0.49, 0.55, 0.47, 0.5…
+$ pop          &lt;int&gt; 31838, 33051, 33490, 3272, 3677, 3557, 23331, 27925, 3208…
+$ lat          &lt;dbl&gt; -21.685, -21.685, -21.685, -21.235, -21.235, -21.235, -22…
+$ lon          &lt;dbl&gt; -51.073, -51.073, -51.073, -49.644, -49.644, -49.644, -46…
+$ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-51.09093 -..., MULTIPOLYGON…</code></pre>
+</div>
+</div>
+</section><section id="visualizando-com-o-ggplot2" class="slide level2"><h2>Visualizando com o ggplot2</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>pnud_sp_geo <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> espvida)) <span class="sc">+</span></span>
+<span id="cb36-4"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(ano)) <span class="sc">+</span></span>
+<span id="cb36-5"><a href=""></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb36-6"><a href=""></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb36-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Esperança de vida"</span>) <span class="sc">+</span></span>
+<span id="cb36-8"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/mapa-pnud-geo-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section><section><section id="materiais-para-estudar-mais" class="title-slide slide level1 center"><h1>Materiais para estudar mais</h1>
+
+</section><section id="exemplos-similares" class="slide level2"><h2>Exemplos similares</h2>
+<ul>
+<li><p><a href="https://ipeagit.github.io/censobr_oficina_abep_2024/">Workshop: {censobr} - Explorando o Censo Demográfico em R</a></p></li>
+<li><p><a href="https://abjur.github.io/abjData/">Documentação: Pacote abjData</a></p></li>
+<li><p><a href="https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI">Video: Join - Juntando bases de dados</a></p></li>
+<li><p><a href="https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/">Post: Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo</a></p></li>
 </ul></section><section id="referências-sobre-dados-espaciais" class="slide level2"><h2>Referências sobre dados espaciais</h2>
 <ul>
 <li><p><a href="https://analises-ecologicas.netlify.app/cap15.html">Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no R</a></p></li>
