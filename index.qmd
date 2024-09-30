@@ -22,99 +22,142 @@ knitr:
     error: false
     cache: true
     fig-align: center
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # Beatriz Milz
 
-## Acadêmica
+## Experiência acadêmica
 
 -   Doutora em Ciência Ambiental no IEE/USP
-- Atualmente: 
-  - Estágio pós-doutoral na UFABC
-  
-<center>
-![](images/Logo_UFABC.jpg){fig-align="center" width="20%"} [![](images/logo-laplan.png){fig-align="center" width="50%"}](https://laplan.pesquisa.ufabc.edu.br/)
-</center>
+-   Atualmente:
+    -   Estágio pós-doutoral na UFABC
 
-
+<center>![](images/Logo_UFABC.jpg){fig-align="center" width="20%"}
+[![](images/logo-laplan.png){fig-align="center"
+width="50%"}](https://laplan.pesquisa.ufabc.edu.br/)</center>
 
 ## Comunidades
 
 -   Co-organizadora da [R-Ladies São Paulo](https://rladies-sp.org)
-- *Software peer review editor* na [rOpenSci](https://ropensci.org/)
-- [GitHub Star](https://stars.github.com/profiles/beatrizmilz/)
+-   *Software peer review editor* na [rOpenSci](https://ropensci.org/)
+-   [GitHub Star](https://stars.github.com/profiles/beatrizmilz/)
 
-
-<center>
-[![](images/logo-rladies.png){fig-align="center" width="25%"}](https://rladies-sp.org/)
-[![](images/ropensci.png){fig-align="center" width="25%"}](https://ropensci.org/)
-[![](images/github-stars-logo_Color.webp){fig-align="center" width="30%"}](https://stars.github.com/profiles/beatrizmilz/)
-</center>
+<center>[![](images/logo-rladies.png){fig-align="center"
+width="25%"}](https://rladies-sp.org/)
+[![](images/ropensci.png){fig-align="center"
+width="25%"}](https://ropensci.org/)
+[![](images/github-stars-logo_Color.webp){fig-align="center"
+width="30%"}](https://stars.github.com/profiles/beatrizmilz/)</center>
 
 ## Organização da tradução: R4DS 2ed
 
-<center>
-[![](images/r4ds.png){fig-align="center" width="70%"}](https://cienciadedatos.github.io/pt-r4ds/)
+<center>[![](images/r4ds.png){fig-align="center"
+width="70%"}](https://cienciadedatos.github.io/pt-r4ds/)</center>
 
-</center>
+## Experiência com dados espaciais
 
+-   2014-2015: Núcleo técnico de Gestão Ambiental/Secretaria de
+    Segurança Urbana/Prefeitura Municipal de São Paulo
+-   2016-2018: Mestrado no Programa de Pós Graduação em Análise
+    Ambiental Integrada na UNIFESP, Campus Diadema.
+-   2019 em diante: aulas, projetos de consultoria, pesquisa de
+    doutorado, etc.
 
-##  Experiência com dados espaciais
-
--   2014-2015: Núcleo técnico de Gestão Ambiental/Secretaria de Segurança Urbana/Prefeitura Municipal de São Paulo
--   2016-2018: Mestrado no Programa de Pós Graduação em Análise Ambiental Integrada na UNIFESP, Campus Diadema.
--   2019 em diante: aulas, projetos de consultoria, pesquisa de doutorado, etc.
-    
 <https://beamilz.com>
 
 # Plano para hoje!
 
-- O que é o pacote geobr
+-   O que é o pacote geobr
 
-- Conceitos importantes
+-   Conceitos importantes
 
-- Principais funções do pacote `geobr`
+-   Principais funções do pacote `geobr`
 
-- Exemplo Prático!
+-   Exemplo Prático!
 
-- Links úteis para aprender mais
+-   Links úteis para aprender mais
+
+# Pré-requisitos
+
+## R e RStudio
+
+-   Se você ainda não tem o R e o RStudio instalados, você pode
+    baixá-los nos links abaixo:
+
+    -   [R](https://cran.r-project.org/)
+
+    -   [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+Outra opção é utilizar o [RStudio Cloud](https://posit.cloud/)
 
 ## Principais pacotes que usaremos
 
-<center>
-[![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
-[![](images/logos/dplyr.png){fig-align="center" width="15%"}](https://dplyr.tidyverse.org/)
-[![](images/logos/ggplot2.png){fig-align="center" width="15%"}](https://ggplot2.tidyverse.org/)
-[![](images/logos/sf.gif){fig-align="center" width="17%"}](https://r-spatial.github.io/sf/)
+<center>[![](images/logos/geobr-amarelo.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/dplyr.png){fig-align="center"
+width="15%"}](https://dplyr.tidyverse.org/)
+[![](images/logos/ggplot2.png){fig-align="center"
+width="15%"}](https://ggplot2.tidyverse.org/)
+[![](images/logos/sf.gif){fig-align="center"
+width="17%"}](https://r-spatial.github.io/sf/)</center>
+
+```{r}
+#| eval: false
+install.packages(c("geobr", "tidyverse", "sf", "abjData"))
+```
+
+## Possíveis dificuldades: #1
+
+O pacote `{geobr}` tem como dependência o pacote `{sf}`. Esse pacote
+pode apresentar dificuldades para instalar.
+
+Caso tenha problemas, verifique as instruções na documentação:
+
+[![Instruções de
+instalação](images/sf-install.png){fig-align="center"}](https://r-spatial.github.io/sf/#installing)
 
 
-
-</center>
 
 ## Pacote geobr
 
--   O pacote **geobr** disponibiliza funções para obter diversas bases de dados **espaciais** oficiais do Brasil.
+-   O pacote **geobr** disponibiliza funções para obter diversas bases
+    de dados **espaciais** oficiais do Brasil.
 
--   O pacote foi desenvolvido e é mantido pela equipe do [Instituto de Pesquisa Econômica Aplicada (IPEA)](https://www.ipea.gov.br/portal/).
+-   O pacote foi desenvolvido e é mantido pela equipe do [Instituto de
+    Pesquisa Econômica Aplicada
+    (IPEA)](https://www.ipea.gov.br/portal/).
 
--   Você pode saber mais no [repositório do pacote no GitHub](https://ipeagit.github.io/geobr/).
+-   Você pode saber mais no [repositório do pacote no
+    GitHub](https://ipeagit.github.io/geobr/).
 
-- Disponível para `R` e `Python`.
+-   Disponível para `R` e `Python`.
 
-<center>
-![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}![](images/logos/geobr-preto.png){fig-align="center" width="15%"}
-</center>
+<center>![](images/logos/geobr-amarelo.png){fig-align="center"
+width="15%"}![](images/logos/geobr-preto.png){fig-align="center"
+width="15%"}</center>
+
+
+## Possíveis dificuldades: #2
+
+- O pacote `{geobr}` faz o download das bases de dados. Isso significa que: 
+    - Você precisa estar conectado à internet para baixar as bases de dados.
+    - Caso o servidor onde os dados estão armazenados esteja fora do ar, você não conseguirá baixar as bases de dados.
+    
+Uma sugestão é salvar os resultados em um arquivo após baixar os dados, para evitar ter que baixar novamente, com a função `readr::write_rds()`.
 
 ## Pacotes de dados brasileiros desenvolvidos pelo IPEA
 
-
-<center>
-[![](images/logos/geobr-amarelo.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
-[![](images/logos/geobr-preto.png){fig-align="center" width="15%"}](https://ipeagit.github.io/geobr/)
-[![](images/logos/flightsbr.png){fig-align="center" width="15%"}](https://ipeagit.github.io/flightsbr)
-[![](images/logos/censobr.png){fig-align="center" width="15%"}](https://ipeagit.github.io/censobr/)
-</center>
-
+<center>[![](images/logos/geobr-amarelo.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/geobr-preto.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/flightsbr.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/flightsbr)
+[![](images/logos/censobr.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/censobr/)</center>
 
 # Conceitos importantes
 
@@ -136,7 +179,6 @@ Fonte da imagem: <https://guides.lib.uw.edu/>
 Fonte: [Geocomputation with R](https://r.geocompx.org/spatial-class)
 :::
 
-
 ## Com o geobr, trabalhamos com dados vetoriais!
 
 -   **Pontos**: localização de uma escola, ponto de coleta, etc.
@@ -145,16 +187,13 @@ Fonte: [Geocomputation with R](https://r.geocompx.org/spatial-class)
 
 -   **Polígonos**: delimitação de cidades, estados, países, etc.
 
-
-
-
-
 ## Pacote sf
 
+-   O [sf (Simple Features for R)](https://r-spatial.github.io/sf/) é um
+    pacote para manipulação de dados espaciais vetoriais.
 
-- O [sf (Simple Features for R)](https://r-spatial.github.io/sf/) é um pacote para manipulação de dados espaciais vetoriais.
-
-[![](images/sf_horst.png){fig-align="center" width="60%"}](https://github.com/allisonhorst/stats-illustrations)
+[![](images/sf_horst.png){fig-align="center"
+width="60%"}](https://github.com/allisonhorst/stats-illustrations)
 
 ::: footer
 Fonte da imagem: <https://github.com/allisonhorst/stats-illustrations>
@@ -184,11 +223,14 @@ Fonte: <https://github.com/rstudio/cheatsheets/blob/main/sf.pdf>
 
 -   `read_state()`: Delimitação dos estados do Brasil
 
--   `read_state("SP")`: Delimitação de um estado específico, usando a sigla como argumento
+-   `read_state("SP")`: Delimitação de um estado específico, usando a
+    sigla como argumento
 
--   `read_municipality()`: Delimitação de todos os municípios do Brasil. É uma base pesada!
+-   `read_municipality()`: Delimitação de todos os municípios do Brasil.
+    É uma base pesada!
 
--   `read_municipality(code_muni = 3550308)`: Delimitação de um município específico, usando o código do IBGE do município.
+-   `read_municipality(code_muni = 3550308)`: Delimitação de um
+    município específico, usando o código do IBGE do município.
 
 ## Consultando todas as funções disponíveis
 
@@ -202,11 +244,12 @@ geobr::list_geobr() |>
                        defaultPageSize = 5, class = "smaller")
 ```
 
-
 # Exemplos práticos
 
-# Exemplo 1: 
-Localização das escolas que oferecem Ensino Médio no município de São Paulo
+# Exemplo 1:
+
+Localização das escolas que oferecem Ensino Médio no município de São
+Paulo
 
 ## Ler a delimitação dos estados brasileiros
 
@@ -269,9 +312,11 @@ glimpse(brasil_municipios)
 
 ## Como saber o código IBGE de um município?
 
--   Você pode consultar o código IBGE de um município no site do [IBGE](https://www.ibge.gov.br/explica/codigos-dos-municipios.php).
+-   Você pode consultar o código IBGE de um município no site do
+    [IBGE](https://www.ibge.gov.br/explica/codigos-dos-municipios.php).
 
-[![](images/codigo-muni.png){fig-align="center" width="80%"}](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)
+[![](images/codigo-muni.png){fig-align="center"
+width="80%"}](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)
 
 ## Filtrando o município de São Paulo
 
@@ -386,7 +431,8 @@ ensino_medio_sao_paulo |>
 
 ## 
 
-Localização das escolas estaduais e escolas privadas no município de São Paulo, que oferecem Ensino Médio
+Localização das escolas estaduais e escolas privadas no município de São
+Paulo, que oferecem Ensino Médio
 
 ```{r}
 #| echo: true
@@ -426,8 +472,9 @@ ensino_medio_sao_paulo |>
   )
 ```
 
-# Exemplo 2: 
-Criando um mapa utilizando dados que não estão no `{geobr}` 
+# Exemplo 2:
+
+Criando um mapa utilizando dados que não estão no `{geobr}`
 
 ## `abjData::pnud_min`
 
@@ -435,7 +482,6 @@ Criando um mapa utilizando dados que não estão no `{geobr}`
 library(abjData)
 glimpse(pnud_min)
 ```
-
 
 ## Dados para o estado de São Paulo
 
@@ -445,9 +491,9 @@ pnud_sp <- filter(pnud_min, uf_sigla == "SP")
 
 Como elaborar um mapa com esses dados?
 
-## Join 
+## Join
 
-- Podemos unir duas bases utilizando uma coluna em comum
+-   Podemos unir duas bases utilizando uma coluna em comum
 
 ![](images/left-join.gif){fig-align="center" width="50%"}
 
@@ -455,14 +501,15 @@ Como elaborar um mapa com esses dados?
 Fonte da imagem: <https://www.garrickadenbuie.com/project/tidyexplain/>
 :::
 
-
 ## Dados vetoriais
 
-Importar os polígonos com a delimitação dos municípios do estado de São Paulo:
+Importar os polígonos com a delimitação dos municípios do estado de São
+Paulo:
 
 ```{r}
 municipios_sp <- read_municipality("SP", showProgress = FALSE)
 ```
+
 ## Unir as duas bases de dados
 
 ```{r}
@@ -496,30 +543,35 @@ pnud_sp_geo |>
   theme(legend.position = "bottom")
 ```
 
-
 # Materiais para estudar mais
 
-## Exemplos similares 
+## Exemplos similares
 
+-   [Workshop: {censobr} - Explorando o Censo Demográfico em
+    R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
 
-- [Workshop: {censobr} - Explorando o Censo Demográfico em R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+-   [Documentação: Pacote abjData](https://abjur.github.io/abjData/)
 
-- [Documentação: Pacote abjData](https://abjur.github.io/abjData/)
+-   [Video: Join - Juntando bases de
+    dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
 
-- [Video: Join - Juntando bases de dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
-
-
-- [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
-
+-   [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando
+    dados sobre coleta e tratamento de esgoto no Estado De São
+    Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
 
 ## Referências sobre dados espaciais
 
--   [Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no R](https://analises-ecologicas.netlify.app/cap15.html)
+-   [Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no
+    R](https://analises-ecologicas.netlify.app/cap15.html)
 
--   [Livro Geocomputation with R](https://geocompr.robinlovelace.net/intro.html)
+-   [Livro Geocomputation with
+    R](https://geocompr.robinlovelace.net/intro.html)
 
--   [A Gentle Introduction to GIS - QGIS Documentation](https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/)
+-   [A Gentle Introduction to GIS - QGIS
+    Documentation](https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/)
 
--   [Geocomputation with R - Foundations - Geographic data in R](https://r.geocompx.org/spatial-class)
+-   [Geocomputation with R - Foundations - Geographic data in
+    R](https://r.geocompx.org/spatial-class)
 
--   [Introdução à acessibilidade urbana - um guia prático em R](https://ipeagit.github.io/intro_access_book/pt/)
+-   [Introdução à acessibilidade urbana - um guia prático em
+    R](https://ipeagit.github.io/intro_access_book/pt/)

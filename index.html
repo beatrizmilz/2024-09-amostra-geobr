@@ -408,7 +408,7 @@ Beatriz Milz
   <p class="date">30/09/2024</p>
 </section><section><section id="beatriz-milz" class="title-slide slide level1 center"><h1>Beatriz Milz</h1>
 
-</section><section id="acadêmica" class="slide level2"><h2>Acadêmica</h2>
+</section><section id="experiência-acadêmica" class="slide level2"><h2>Experiência acadêmica</h2>
 <ul>
 <li>Doutora em Ciência Ambiental no IEE/USP</li>
 <li>Atualmente:
@@ -434,10 +434,7 @@ Beatriz Milz
 </center>
 </section><section id="organização-da-tradução-r4ds-2ed" class="slide level2"><h2>Organização da tradução: R4DS 2ed</h2>
 <center>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://cienciadedatos.github.io/pt-r4ds/"><img data-src="images/r4ds.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a></p>
-</figure>
-</div>
+<a href="https://cienciadedatos.github.io/pt-r4ds/"><img data-src="images/r4ds.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></a>
 </center>
 </section><section id="experiência-com-dados-espaciais" class="slide level2"><h2>Experiência com dados espaciais</h2>
 <ul>
@@ -446,17 +443,40 @@ Beatriz Milz
 <li>2019 em diante: aulas, projetos de consultoria, pesquisa de doutorado, etc.</li>
 </ul>
 <p><a href="https://beamilz.com" class="uri">https://beamilz.com</a></p>
-</section></section><section><section id="plano-para-hoje" class="title-slide slide level1 center"><h1>Plano para hoje!</h1>
+</section></section><section id="plano-para-hoje" class="title-slide slide level1 center"><h1>Plano para hoje!</h1>
 <ul>
 <li><p>O que é o pacote geobr</p></li>
 <li><p>Conceitos importantes</p></li>
 <li><p>Principais funções do pacote <code>geobr</code></p></li>
 <li><p>Exemplo Prático!</p></li>
 <li><p>Links úteis para aprender mais</p></li>
-</ul></section><section id="principais-pacotes-que-usaremos" class="slide level2"><h2>Principais pacotes que usaremos</h2>
+</ul></section><section><section id="pré-requisitos" class="title-slide slide level1 center"><h1>Pré-requisitos</h1>
+
+</section><section id="r-e-rstudio" class="slide level2"><h2>R e RStudio</h2>
+<ul>
+<li>
+<p>Se você ainda não tem o R e o RStudio instalados, você pode baixá-los nos links abaixo:</p>
+<ul>
+<li><p><a href="https://cran.r-project.org/">R</a></p></li>
+<li><p><a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Outra opção é utilizar o <a href="https://posit.cloud/">RStudio Cloud</a></p>
+</section><section id="principais-pacotes-que-usaremos" class="slide level2"><h2>Principais pacotes que usaremos</h2>
 <center>
-<p><a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://dplyr.tidyverse.org/"><img data-src="images/logos/dplyr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ggplot2.tidyverse.org/"><img data-src="images/logos/ggplot2.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://r-spatial.github.io/sf/"><img data-src="images/logos/sf.gif" class="quarto-figure quarto-figure-center" style="width:17.0%"></a></p>
+<a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://dplyr.tidyverse.org/"><img data-src="images/logos/dplyr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ggplot2.tidyverse.org/"><img data-src="images/logos/ggplot2.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://r-spatial.github.io/sf/"><img data-src="images/logos/sf.gif" class="quarto-figure quarto-figure-center" style="width:17.0%"></a>
 </center>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"geobr"</span>, <span class="st">"tidyverse"</span>, <span class="st">"sf"</span>, <span class="st">"abjData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="possíveis-dificuldades-1" class="slide level2"><h2>Possíveis dificuldades: #1</h2>
+<p>O pacote <a href="https://ipeagit.github.io/geobr/">geobr</a> tem como dependência o pacote <a href="https://r-spatial.github.io/sf/">sf</a>. Esse pacote pode apresentar dificuldades para instalar.</p>
+<p>Caso tenha problemas, verifique as instruções na documentação:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><a href="https://r-spatial.github.io/sf/#installing"><img data-src="images/sf-install.png" class="quarto-figure quarto-figure-center" alt="Instruções de instalação"></a></p>
+<figcaption>Instruções de instalação</figcaption></figure>
+</div>
 </section><section id="pacote-geobr" class="slide level2"><h2>Pacote geobr</h2>
 <ul>
 <li><p>O pacote <strong>geobr</strong> disponibiliza funções para obter diversas bases de dados <strong>espaciais</strong> oficiais do Brasil.</p></li>
@@ -467,6 +487,16 @@ Beatriz Milz
 <center>
 <img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"><img data-src="images/logos/geobr-preto.png" class="quarto-figure quarto-figure-center" style="width:15.0%">
 </center>
+</section><section id="possíveis-dificuldades-2" class="slide level2"><h2>Possíveis dificuldades: #2</h2>
+<ul>
+<li>O pacote <a href="https://ipeagit.github.io/geobr/">geobr</a> faz o download das bases de dados. Isso significa que:
+<ul>
+<li>Você precisa estar conectado à internet para baixar as bases de dados.</li>
+<li>Caso o servidor onde os dados estão armazenados esteja fora do ar, você não conseguirá baixar as bases de dados.</li>
+</ul>
+</li>
+</ul>
+<p>Uma sugestão é salvar os resultados em um arquivo após baixar os dados, para evitar ter que baixar novamente, com a função <code><a href="https://readr.tidyverse.org/reference/read_rds.html">readr::write_rds()</a></code>.</p>
 </section><section id="pacotes-de-dados-brasileiros-desenvolvidos-pelo-ipea" class="slide level2"><h2>Pacotes de dados brasileiros desenvolvidos pelo IPEA</h2>
 <center>
 <a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-preto.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/flightsbr"><img data-src="images/logos/flightsbr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/censobr/"><img data-src="images/logos/censobr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a>
@@ -526,8 +556,8 @@ Beatriz Milz
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="reactable html-widget html-fill-item" id="htmlwidget-e61d152a9251160dd02d" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e61d152a9251160dd02d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"function":["`read_country`","`read_region`","`read_state`","`read_meso_region`","`read_micro_region`","`read_intermediate_region`","`read_immediate_region`","`read_municipality`","`read_municipal_seat`","`read_weighting_area`","`read_census_tract`","`read_statistical_grid`","`read_metro_area`","`read_urban_area`","`read_amazon`","`read_biomes`","`read_conservation_units`","`read_disaster_risk_area`","`read_indigenous_land`","`read_semiarid`","`read_health_facilities`","`read_health_region`","`read_neighborhood`","`read_schools`","`read_comparable_areas`","`read_urban_concentrations`","`read_pop_arrangements`"],"geography":["Country","Region","States","Meso region","Micro region","Intermediate region","Immediate region","Municipality","Municipality seats (sedes municipais)","Census weighting area (área de ponderação)","Census tract (setor censitário)","Statistical Grid of 200 x 200 meters","Metropolitan areas","Urban footprints","Brazil's Legal Amazon","Biomes","Environmental Conservation Units","Disaster risk areas","Indigenous lands","Semi Arid region","Health facilities","Health regions and macro regions","Neighborhood limits","Schools","Historically comparable municipalities, aka Áreas mínimas comparáveis (AMCs)","Urban concentration areas (concentrações urbanas)","Population arrangements (arranjos populacionais)"],"source":["IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","MMA","IBGE","MMA","CEMADEN and IBGE","FUNAI","IBGE","CNES, DataSUS","DataSUS","IBGE","INEP","IBGE","IBGE","IBGE"]},"columns":[{"id":"function","name":"function","type":"character"},{"id":"geography","name":"geography","type":"character"},{"id":"source","name":"source","type":"character"}],"defaultPageSize":5,"className":"smaller","dataKey":"63b58768d651a969f70f1cc5aad641a8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-7b8bb9b5a316037bb66e" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7b8bb9b5a316037bb66e">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"function":["`read_country`","`read_region`","`read_state`","`read_meso_region`","`read_micro_region`","`read_intermediate_region`","`read_immediate_region`","`read_municipality`","`read_municipal_seat`","`read_weighting_area`","`read_census_tract`","`read_statistical_grid`","`read_metro_area`","`read_urban_area`","`read_amazon`","`read_biomes`","`read_conservation_units`","`read_disaster_risk_area`","`read_indigenous_land`","`read_semiarid`","`read_health_facilities`","`read_health_region`","`read_neighborhood`","`read_schools`","`read_comparable_areas`","`read_urban_concentrations`","`read_pop_arrangements`"],"geography":["Country","Region","States","Meso region","Micro region","Intermediate region","Immediate region","Municipality","Municipality seats (sedes municipais)","Census weighting area (área de ponderação)","Census tract (setor censitário)","Statistical Grid of 200 x 200 meters","Metropolitan areas","Urban footprints","Brazil's Legal Amazon","Biomes","Environmental Conservation Units","Disaster risk areas","Indigenous lands","Semi Arid region","Health facilities","Health regions and macro regions","Neighborhood limits","Schools","Historically comparable municipalities, aka Áreas mínimas comparáveis (AMCs)","Urban concentration areas (concentrações urbanas)","Population arrangements (arranjos populacionais)"],"source":["IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","IBGE","MMA","IBGE","MMA","CEMADEN and IBGE","FUNAI","IBGE","CNES, DataSUS","DataSUS","IBGE","INEP","IBGE","IBGE","IBGE"]},"columns":[{"id":"function","name":"function","type":"character"},{"id":"geography","name":"geography","type":"character"},{"id":"source","name":"source","type":"character"}],"defaultPageSize":5,"className":"smaller","dataKey":"63b58768d651a969f70f1cc5aad641a8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section></section><section id="exemplos-práticos" class="title-slide slide level1 center"><h1>Exemplos práticos</h1>
@@ -536,25 +566,25 @@ Beatriz Milz
 <p>Localização das escolas que oferecem Ensino Médio no município de São Paulo</p>
 </section><section id="ler-a-delimitação-dos-estados-brasileiros" class="slide level2"><h2>Ler a delimitação dos estados brasileiros</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Carregando pacotes necessários</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">library</span>(geobr)</span>
-<span id="cb1-3"><a href=""></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-4"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Carregando pacotes necessários</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">library</span>(geobr)</span>
+<span id="cb2-3"><a href=""></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-4"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Lendo os dados da delimitação dos estados brasileiros</span></span>
-<span id="cb2-2"><a href=""></a>brasil_ufs <span class="ot">&lt;-</span> <span class="fu">read_state</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Lendo os dados da delimitação dos estados brasileiros</span></span>
+<span id="cb3-2"><a href=""></a>brasil_ufs <span class="ot">&lt;-</span> <span class="fu">read_state</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Classe do objeto</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">class</span>(brasil_ufs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Classe do objeto</span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">class</span>(brasil_ufs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sf"         "data.frame"</code></pre>
 </div>
 </div>
 </section><section id="explorando-o-objeto" class="slide level2"><h2>Explorando o objeto</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">glimpse</span>(brasil_ufs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">glimpse</span>(brasil_ufs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 27
 Columns: 6
@@ -568,29 +598,29 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-63.32721 -..., MULTIPO
 </div>
 </section><section id="visualizando-os-estados-brasileiros" class="slide level2"><h2>Visualizando os estados brasileiros</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>brasil_ufs <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb7-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>brasil_ufs <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-br-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="filtrando-o-estado-de-são-paulo" class="slide level2"><h2>Filtrando o estado de São Paulo</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>estado_sp <span class="ot">&lt;-</span> brasil_ufs <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href=""></a>  <span class="fu">filter</span>(abbrev_state <span class="sc">==</span> <span class="st">"SP"</span>) </span>
-<span id="cb8-3"><a href=""></a></span>
-<span id="cb8-4"><a href=""></a>estado_sp <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb8-6"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>estado_sp <span class="ot">&lt;-</span> brasil_ufs <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href=""></a>  <span class="fu">filter</span>(abbrev_state <span class="sc">==</span> <span class="st">"SP"</span>) </span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>estado_sp <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-sp-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-os-municípios" class="slide level2"><h2>E os municípios?</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Carregando municípios</span></span>
-<span id="cb9-2"><a href=""></a>brasil_municipios <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Carregando municípios</span></span>
+<span id="cb10-2"><a href=""></a>brasil_municipios <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="explorando-o-objeto-1" class="slide level2"><h2>Explorando o objeto</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">glimpse</span>(brasil_municipios)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">glimpse</span>(brasil_municipios)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,565
 Columns: 5
@@ -611,23 +641,23 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-62.2462 -1..., MULTIPO
 </div>
 </section><section id="filtrando-o-município-de-são-paulo" class="slide level2"><h2>Filtrando o município de São Paulo</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>muni_sp <span class="ot">&lt;-</span> brasil_municipios <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href=""></a>  <span class="fu">filter</span>(code_muni <span class="sc">==</span> <span class="dv">3550308</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>muni_sp <span class="ot">&lt;-</span> brasil_municipios <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href=""></a>  <span class="fu">filter</span>(code_muni <span class="sc">==</span> <span class="dv">3550308</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="visualizando-o-município-de-são-paulo" class="slide level2"><h2>Visualizando o município de São Paulo</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>muni_sp <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb13-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>muni_sp <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="e-escolas" class="slide level2"><h2>E escolas?</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>escolas_brasil <span class="ot">&lt;-</span> <span class="fu">read_schools</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>escolas_brasil <span class="ot">&lt;-</span> <span class="fu">read_schools</span>(<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="explorando-o-objeto-2" class="slide level2"><h2>Explorando o objeto</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">glimpse</span>(escolas_brasil)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">glimpse</span>(escolas_brasil)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 222,936
 Columns: 19
@@ -654,15 +684,15 @@ $ geom                           &lt;POINT [°]&gt; POINT (-63.85401 -8.758459),
 </div>
 </section><section id="escolas-no-município-de-são-paulo" class="slide level2"><h2>Escolas no município de São Paulo</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>escolas_saopaulo <span class="ot">&lt;-</span> escolas_brasil <span class="sc">|&gt;</span> </span>
-<span id="cb17-2"><a href=""></a>  <span class="fu">filter</span>(abbrev_state <span class="sc">==</span> <span class="st">"SP"</span>,</span>
-<span id="cb17-3"><a href=""></a>         name_muni <span class="sc">==</span> <span class="st">"São Paulo"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>escolas_saopaulo <span class="ot">&lt;-</span> escolas_brasil <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href=""></a>  <span class="fu">filter</span>(abbrev_state <span class="sc">==</span> <span class="st">"SP"</span>,</span>
+<span id="cb18-3"><a href=""></a>         name_muni <span class="sc">==</span> <span class="st">"São Paulo"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="escolas-por-government_level" class="slide level2"><h2>Escolas por <code>government_level</code>
 </h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a href=""></a>  <span class="fu">count</span>(government_level, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href=""></a>  <span class="fu">count</span>(government_level, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 4 features and 2 fields
 Geometry type: MULTIPOINT
@@ -678,104 +708,104 @@ Geodetic CRS:  SIRGAS 2000
 </div>
 </section><section id="escolas-que-oferecem-ensino-médio" class="slide level2"><h2>Escolas que oferecem Ensino Médio</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>ensino_medio_sao_paulo <span class="ot">&lt;-</span> escolas_saopaulo <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href=""></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(education_level, <span class="st">"Ensino Médio"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href=""></a>  <span class="fu">group_by</span>(government_level) <span class="sc">|&gt;</span> </span>
-<span id="cb20-4"><a href=""></a>  <span class="fu">mutate</span>(</span>
-<span id="cb20-5"><a href=""></a>    <span class="at">numero_linhas =</span> <span class="fu">n</span>(),</span>
-<span id="cb20-6"><a href=""></a>    <span class="at">nome_label =</span> <span class="fu">paste0</span>(government_level, <span class="st">" (N="</span>, numero_linhas, <span class="st">")"</span>)</span>
-<span id="cb20-7"><a href=""></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb20-8"><a href=""></a><span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>ensino_medio_sao_paulo <span class="ot">&lt;-</span> escolas_saopaulo <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href=""></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(education_level, <span class="st">"Ensino Médio"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href=""></a>  <span class="fu">group_by</span>(government_level) <span class="sc">|&gt;</span> </span>
+<span id="cb21-4"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-5"><a href=""></a>    <span class="at">numero_linhas =</span> <span class="fu">n</span>(),</span>
+<span id="cb21-6"><a href=""></a>    <span class="at">nome_label =</span> <span class="fu">paste0</span>(government_level, <span class="st">" (N="</span>, numero_linhas, <span class="st">")"</span>)</span>
+<span id="cb21-7"><a href=""></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb21-8"><a href=""></a><span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section><section id="vamos-visualizar" class="title-slide slide level1 center"><h1>Vamos visualizar?</h1>
 
 </section><section id="visualizando-as-escolas" class="slide level2"><h2>Visualizando as escolas</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb21-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-3"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-sp-escolas-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-e-o-município" class="slide level2"><h2>Visualizando as escolas e o município</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb22-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
-<span id="cb22-4"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
+<span id="cb23-4"><a href=""></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
 </h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
-<span id="cb23-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb23-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
-<span id="cb23-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
+<span id="cb24-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-level-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-por-government_level-1" class="slide level2"><h2>Visualizando as escolas por <code>government_level</code>
 </h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb24-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
-<span id="cb24-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb24-5"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>escolas_saopaulo <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb25-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
+<span id="cb25-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-facet-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="visualizando-as-escolas-que-oferecem-ensino-médio" class="slide level2"><h2>Visualizando as escolas que oferecem Ensino Médio</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb25-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
-<span id="cb25-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level, </span>
-<span id="cb25-5"><a href=""></a>              <span class="at">alpha =</span> <span class="fl">0.1</span>), </span>
-<span id="cb25-6"><a href=""></a>          <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb25-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
+<span id="cb26-4"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level, </span>
+<span id="cb26-5"><a href=""></a>              <span class="at">alpha =</span> <span class="fl">0.1</span>), </span>
+<span id="cb26-6"><a href=""></a>          <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> government_level, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-facet-EM-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="section" class="slide level2"><h2></h2>
 <p>Localização das escolas estaduais e escolas privadas no município de São Paulo, que oferecem Ensino Médio</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Ver código</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">library</span>(ggspatial)</span>
-<span id="cb26-2"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
-<span id="cb26-3"><a href=""></a>  <span class="fu">filter</span>(government_level <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Estadual"</span>, <span class="st">"Privada"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb26-4"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb26-5"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
-<span id="cb26-6"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level, <span class="at">alpha =</span> <span class="fl">0.1</span>), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> nome_label) <span class="sc">+</span></span>
-<span id="cb26-8"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>,</span>
-<span id="cb26-9"><a href=""></a>       <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
-<span id="cb26-10"><a href=""></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
-<span id="cb26-11"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">1.0</span>, <span class="st">'cm'</span>)) <span class="sc">+</span></span>
-<span id="cb26-12"><a href=""></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb26-13"><a href=""></a>  <span class="fu">theme</span>(</span>
-<span id="cb26-14"><a href=""></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(</span>
-<span id="cb26-15"><a href=""></a>      <span class="at">color =</span> <span class="fu">gray</span>(<span class="fl">0.9</span>),</span>
-<span id="cb26-16"><a href=""></a>      <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb26-17"><a href=""></a>      <span class="at">size =</span> <span class="fl">0.1</span></span>
-<span id="cb26-18"><a href=""></a>    ),</span>
-<span id="cb26-19"><a href=""></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>)</span>
-<span id="cb26-20"><a href=""></a>  ) <span class="sc">+</span></span>
-<span id="cb26-21"><a href=""></a>  <span class="fu">theme</span>(</span>
-<span id="cb26-22"><a href=""></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(</span>
-<span id="cb26-23"><a href=""></a>      <span class="at">angle =</span> <span class="dv">90</span>,</span>
-<span id="cb26-24"><a href=""></a>      <span class="at">hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb26-25"><a href=""></a>      <span class="at">size =</span> <span class="dv">8</span></span>
-<span id="cb26-26"><a href=""></a>    ),</span>
-<span id="cb26-27"><a href=""></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
-<span id="cb26-28"><a href=""></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>)),</span>
-<span id="cb26-29"><a href=""></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>)),</span>
-<span id="cb26-30"><a href=""></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>))</span>
-<span id="cb26-31"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Ver código</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb27-2"><a href=""></a>ensino_medio_sao_paulo <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a href=""></a>  <span class="fu">filter</span>(government_level <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Estadual"</span>, <span class="st">"Privada"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-4"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb27-5"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> muni_sp) <span class="sc">+</span></span>
+<span id="cb27-6"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> government_level, <span class="at">alpha =</span> <span class="fl">0.1</span>), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> nome_label) <span class="sc">+</span></span>
+<span id="cb27-8"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>,</span>
+<span id="cb27-9"><a href=""></a>       <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<span id="cb27-10"><a href=""></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb27-11"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">1.0</span>, <span class="st">'cm'</span>)) <span class="sc">+</span></span>
+<span id="cb27-12"><a href=""></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb27-13"><a href=""></a>  <span class="fu">theme</span>(</span>
+<span id="cb27-14"><a href=""></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(</span>
+<span id="cb27-15"><a href=""></a>      <span class="at">color =</span> <span class="fu">gray</span>(<span class="fl">0.9</span>),</span>
+<span id="cb27-16"><a href=""></a>      <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb27-17"><a href=""></a>      <span class="at">size =</span> <span class="fl">0.1</span></span>
+<span id="cb27-18"><a href=""></a>    ),</span>
+<span id="cb27-19"><a href=""></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>)</span>
+<span id="cb27-20"><a href=""></a>  ) <span class="sc">+</span></span>
+<span id="cb27-21"><a href=""></a>  <span class="fu">theme</span>(</span>
+<span id="cb27-22"><a href=""></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(</span>
+<span id="cb27-23"><a href=""></a>      <span class="at">angle =</span> <span class="dv">90</span>,</span>
+<span id="cb27-24"><a href=""></a>      <span class="at">hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb27-25"><a href=""></a>      <span class="at">size =</span> <span class="dv">8</span></span>
+<span id="cb27-26"><a href=""></a>    ),</span>
+<span id="cb27-27"><a href=""></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb27-28"><a href=""></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>)),</span>
+<span id="cb27-29"><a href=""></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>)),</span>
+<span id="cb27-30"><a href=""></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.8</span>))</span>
+<span id="cb27-31"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <img data-src="index_files/figure-revealjs/mapa-muni-sp-escolas-final-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section><section><section id="exemplo-2" class="title-slide slide level1 center"><h1>Exemplo 2:</h1>
 <p>Criando um mapa utilizando dados que não estão no <a href="https://ipeagit.github.io/geobr/">geobr</a></p>
 </section><section id="abjdatapnud_min" class="slide level2"><h2><code>abjData::pnud_min</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">library</span>(abjData)</span>
-<span id="cb27-2"><a href=""></a><span class="fu">glimpse</span>(pnud_min)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">library</span>(abjData)</span>
+<span id="cb28-2"><a href=""></a><span class="fu">glimpse</span>(pnud_min)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 16,686
 Columns: 15
@@ -798,7 +828,7 @@ $ lon       &lt;dbl&gt; -61.996, -63.041, -60.545, -61.448, -60.812, -60.542, -6
 </div>
 </section><section id="dados-para-o-estado-de-são-paulo" class="slide level2"><h2>Dados para o estado de São Paulo</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>pnud_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(pnud_min, uf_sigla <span class="sc">==</span> <span class="st">"SP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>pnud_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(pnud_min, uf_sigla <span class="sc">==</span> <span class="st">"SP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Como elaborar um mapa com esses dados?</p>
 </section><section id="join" class="slide level2"><h2>Join</h2>
@@ -812,11 +842,11 @@ $ lon       &lt;dbl&gt; -61.996, -63.041, -60.545, -61.448, -60.812, -60.542, -6
 </section><section id="dados-vetoriais-1" class="slide level2"><h2>Dados vetoriais</h2>
 <p>Importar os polígonos com a delimitação dos municípios do estado de São Paulo:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>municipios_sp <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="st">"SP"</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>municipios_sp <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="st">"SP"</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="unir-as-duas-bases-de-dados" class="slide level2"><h2>Unir as duas bases de dados</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">left_join</span>(municipios_sp, pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">left_join</span>(municipios_sp, pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `sf_column %in% names(g)`:
 ! Can't join `x$code_muni` with `y$muni_id` due to incompatible types.
@@ -826,12 +856,12 @@ $ lon       &lt;dbl&gt; -61.996, -63.041, -60.545, -61.448, -60.812, -60.542, -6
 </div>
 </section><section id="unir-as-duas-bases-de-dados-1" class="slide level2"><h2>Unir as duas bases de dados</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>pnud_sp_geo <span class="ot">&lt;-</span> municipios_sp <span class="sc">|&gt;</span> </span>
-<span id="cb33-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">code_muni =</span> <span class="fu">as.character</span>(code_muni)) <span class="sc">|&gt;</span> </span>
-<span id="cb33-3"><a href=""></a>  <span class="fu">left_join</span>(pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>pnud_sp_geo <span class="ot">&lt;-</span> municipios_sp <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">code_muni =</span> <span class="fu">as.character</span>(code_muni)) <span class="sc">|&gt;</span> </span>
+<span id="cb34-3"><a href=""></a>  <span class="fu">left_join</span>(pnud_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code_muni"</span> <span class="ot">=</span>  <span class="st">"muni_id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="fu">glimpse</span>(pnud_sp_geo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">glimpse</span>(pnud_sp_geo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1,935
 Columns: 19
@@ -858,14 +888,14 @@ $ geom         &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-51.09093 -..., MULTIPO
 </div>
 </section><section id="visualizando-com-o-ggplot2" class="slide level2"><h2>Visualizando com o ggplot2</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>pnud_sp_geo <span class="sc">|&gt;</span> </span>
-<span id="cb36-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb36-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> espvida)) <span class="sc">+</span></span>
-<span id="cb36-4"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(ano)) <span class="sc">+</span></span>
-<span id="cb36-5"><a href=""></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb36-6"><a href=""></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb36-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Esperança de vida"</span>) <span class="sc">+</span></span>
-<span id="cb36-8"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>pnud_sp_geo <span class="sc">|&gt;</span> </span>
+<span id="cb37-2"><a href=""></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb37-3"><a href=""></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> espvida)) <span class="sc">+</span></span>
+<span id="cb37-4"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(ano)) <span class="sc">+</span></span>
+<span id="cb37-5"><a href=""></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb37-6"><a href=""></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb37-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Esperança de vida"</span>) <span class="sc">+</span></span>
+<span id="cb37-8"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/mapa-pnud-geo-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section><section><section id="materiais-para-estudar-mais" class="title-slide slide level1 center"><h1>Materiais para estudar mais</h1>
