@@ -106,7 +106,9 @@ width="17%"}](https://r-spatial.github.io/sf/)</center>
 
 ```{r}
 #| eval: false
-install.packages(c("geobr", "tidyverse", "sf", "abjData"))
+install.packages("remotes")
+remotes::install_github(repo = "r-spatial/sf")
+install.packages(c("geobr", "tidyverse", "abjData"))
 ```
 
 ## Possíveis dificuldades: #1
